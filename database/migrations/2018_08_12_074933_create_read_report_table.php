@@ -15,6 +15,12 @@ class CreateReadReportTable extends Migration
     {
         Schema::create('read_report', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('openid')->commnet('用户openid');
+            $table->longText('content')->commnet('内容');
+            $table->unsignedInteger('likes')->comment('点赞数');
+            $table->unsignedInteger('comments')->comment('评论数');
+            $table->unsignedInteger('commodity_id')->comment('图书id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

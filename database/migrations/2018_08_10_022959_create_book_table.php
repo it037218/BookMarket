@@ -15,14 +15,12 @@ class CreateBookTable extends Migration
     {
         Schema::create('book', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-        });
-        Schema::create('book_tag', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
-        Schema::create('tag', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('book_name')->commnet('书籍名称');
+            $table->string('description')->comment('描述');
+            $table->unsignedInteger('cover_img_url')->comment('封面图片');
+            $table->float('price')->comment('图书原价');
+            $table->string('source')->comment('图书来源');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
