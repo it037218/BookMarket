@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLendTable extends Migration
+class CreateCommnetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLendTable extends Migration
      */
     public function up()
     {
-        Schema::create('lend', function (Blueprint $table) {
+        Schema::create('commnet', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateLendTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lend');
+        Schema::dropIfExists('commnet');
     }
 }
