@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommnetTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateCommnetTable extends Migration
      */
     public function up()
     {
-        Schema::create('commnet', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('openid');
+            $table->string('source')->comment('moments/buy/lend');
+            $table->unsignedInteger('commodity_id')->comment('商品编号');
+            $table->text('content')->comment('评论详情');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateCommnetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commnet');
+        Schema::dropIfExists('comment');
     }
 }

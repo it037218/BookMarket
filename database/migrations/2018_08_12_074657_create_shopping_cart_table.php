@@ -15,7 +15,11 @@ class CreateShoppingCartTable extends Migration
     {
         Schema::create('shopping_cart', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('source');
+            $table->unsignedInteger('commodity_id');
+            $table->string('openid');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

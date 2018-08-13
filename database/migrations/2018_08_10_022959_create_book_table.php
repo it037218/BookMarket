@@ -17,6 +17,8 @@ class CreateBookTable extends Migration
             $table->increments('id');
             $table->string('book_name')->commnet('书籍名称');
             $table->string('description')->comment('描述');
+            $table->unsignedInteger('type_id')->comment('类型');
+            $table->string('author')->comment('作者');
             $table->unsignedInteger('cover_img_url')->comment('封面图片');
             $table->float('price')->comment('图书原价');
             $table->string('source')->comment('图书来源');
